@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Phishing_Websites</string>
+    <string name="validateurl">Please enter the valid URL with above mentioned format</string>
+</resources>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;background: linear-gradient(90deg, rgba(5,4,11,1) 18%, rgba(0,0,0,0.9948354341736695) 22%, rgba(8,8,71,0.8855917366946778) 57%, rgba(15,15,15,1) 72%);}
+* {box-sizing: border-box;}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: gray;
+  color: black;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: blue;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  width:50%;
+  text-align:center;
+   margin: auto;
+  border: 3px solid blue;
+  padding: 10px;
+  box-shadow: 10px 10px 5px grey;
+}
+h3
+{
+ text-align:center;
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+ }
+marquee{
+      font-weight: 800;
+color:white;
+text-shadow: 1px 1px 2px black, 0 0 30px blue, 0 0 5px darkblue;
+}
+label
+{
+text-align:center;
+  color: black;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+a:link, a:visited {
+  background-color: black;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color:blue;
+}
+</style>
+</head>
+<body>
+<a href="{{url_for('index')}}">Back</a>
+<h3>PREDICT WEBSITE PHISHING</h3>
+
+<div class="container">
+  <form action="{{url_for('predict')}}" method="post">
+    <label for="fname">Website Link</label>
+    <input type="text" id="link" name="link" placeholder="enter website link here">
+    <button type="submit">SUBMIT</button>
+  </form>
+  <h3>{{prediction_output}}</h3>
+</div>
+ <marquee>Place the link of any website to find the website is fake or safe</marquee>
+</body>
+</html>

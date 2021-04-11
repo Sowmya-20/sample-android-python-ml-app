@@ -1,0 +1,14 @@
+flask
+numpy
+regex
+tldextract
+ssl
+socket
+bs4
+flask-cors
+urllib
+whois
+datetime
+scikit-learn
+pandas
+requests
