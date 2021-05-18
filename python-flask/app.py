@@ -6,6 +6,7 @@ from tldextract import extract
 import ssl
 import socket
 from bs4 import BeautifulSoup
+from flask_cors import CORS
 import urllib.request
 import whois
 import datetime
@@ -44,7 +45,7 @@ def predict():
     
     url=request.json['link']
     
-   ''' url=request.form['link']'''
+   
     
     check = [url_having_ip(url),url_length(url),url_short(url),having_at_symbol(url),
              doubleSlash(url),prefix_suffix(url),sub_domain(url),SSLfinal_State(url),
@@ -62,11 +63,11 @@ def predict():
     print(output)
     
     if output == 0:
-        res_str= "It is a suspicious site"
-    elif output is 1:
-        return render_template('web.html', prediction_output='phishy or Dangerous' )
-    elif output is -1:
-        return render_template('web.html', prediction_output='legitimate or Secure')
+        return {"message" :  "It is a suspicious site"}
+    elif output == 1:
+        return {"message" :  "It is a phishy or Dangerous site"}
+    elif output == -1:
+        return {"message" :  "It is a legitimate or Secure site"}
     
 def url_having_ip(url):
 #using regular function
